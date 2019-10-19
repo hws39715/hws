@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .box div{
+        /* width: 100px;
+        height: 100px;
+        background-color:blue; */
+        /* margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px; */
+        /* margin: 10px;框体与上、下、左、右距离 */
+        /* margin：10px 20px 30px 40px;上、右、下、左 */
+        /* margin: 10px 20px;上下、左右 */
+
+        /* border: 1px solid black; */
+        /* border-width: 1px;
+        border-style: solid;
+        border-color: black; */
+        /* padding: 50px; */
+        width: 100px;
+        height: 100px;
+        float:left;
+    }
+    .div1{
+            background-color: red;
+        }
+        .div2{
+            background-color:blue;
+        }
+        .div3{
+            background-color:green;
+        }
+        .box{
+            background-color:yellow;
+        }
+        /* ::after 伪元素 */
+        .clearfix::after{
+            content:"";
+            display:block;
+            clear: both;
+        }
+        /* p{
+            clear: both;
+        } */
+    </style>
+</head>
+<body>
+    <div class="box clearfix">
+        <div class="div1">1</div>
+        <div class="div2">2</div>
+        <div class="div3">3</div>
+        <!-- <p></p> -->
+</div>
+    
+</body>
+</html>
