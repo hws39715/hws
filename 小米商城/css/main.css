@@ -1,0 +1,19 @@
+*{
+    margin:0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+.topbar{
+    height: 40px;
+    background-color: #333;
+    line-height: 40px;
+}
+.topbar .container{
+    width: 1226px;
+    margin: 0 auto;
+}
+.container .container-left{
+    float: left;
+}
