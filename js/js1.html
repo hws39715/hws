@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var cos = confirm("是否选择晚餐？");
+        if (cos) {
+            var num = prompt("有几个人吃饭？");
+            var arr = [];
+            for (var i = 0; i < num; i++) {
+                var arr1 = prompt("第" + (i + 1) + "个人叫什么名字");
+                arr.push(arr1);
+            }
+            for (var j = 0; j < num; j++) {
+                var food = "";
+                var h = parseInt(Math.random()*10);
+                console.log(h);
+                switch (h) {
+                    case 1 : food = "包子"; break;
+                    case 2 : food = "面条"; break;
+                    case 3 : food = "饺子"; break;
+                    case 5 : food = "馒头"; break;
+                    case 6 : food = "面包"; break;
+                    case 7 : food = "汉堡"; break;
+                    case 8 : food = "热狗"; break;
+                    case 9 : food = "披萨"; break;
+                    default: food = "不下了"
+                }
+                alert(arr[j] + "吃" + food);
+            }
+        }
+        else {
+            console.log("你选择了取消");
+        }
+    </script>
+</body>
+
+</html>
