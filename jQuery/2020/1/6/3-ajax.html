@@ -40,8 +40,9 @@
     </div>
     <script>
         $(".box input").keyup(function () {
-            // console.log($(this).val());
-            // var xmlhttp;
+            console.log($(this).val());
+            var xmlhttp;
+            //原生方法实现
             // var $this = $(this).val()
             // if (window.XMLHttpRequest) {
             //     //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
@@ -70,6 +71,7 @@
             //         // console.log(res.name)
             //     }
             // }
+            //封装好的get函数
             var $this = $(this).val();
             $.get("https://api.myjson.com/bins/wk66k", function (res) {
                 for (i = 0; i < res.name.length; i++) {
