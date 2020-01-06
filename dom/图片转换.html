@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .myclass {
+            width: 404px;
+            height: 300px;
+            border: 1px solid plum;
+            position: absolute;
+            left: 50%;
+            margin-left: -200px;
+            top: 100px;
+        }
+
+        .toper {
+            width: 403px;
+            height: 200px;
+            border-bottom: 1px solid plum;
+            position: relative;
+        }
+        .toper img{
+            width: 240px;
+            height: 150px;
+            position: absolute;
+            top: 50%;
+            margin-top: -75px;
+            left: 50%;
+            margin-left: -120px;
+        }
+        .bottomer div {
+            width: 100px;
+            height: 100px;
+            border-right: 1px solid plum;
+            float: left;
+            position: relative;
+        }
+
+        .bottomer .b-last {
+            border: none;
+        }
+
+        .bottomer div img {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            top: 50%;
+            margin-top: -30px;
+            left: 50%;
+            margin-left: -30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="myclass">
+        <div class="toper" id="top"><img id="t5" src="./img/bg.jpg" alt=""></div>
+        <div class="bottomer">
+            <div><img id="t1" src="./img/bg.jpg" alt=""></div>
+            <div><img id="t2" src="./img/hs3.jpg" alt=""></div>
+            <div><img id="t3" src="./img/hs2.jpg" alt=""></div>
+            <div class="b-last" ><img id="t4" src="./img/hs1.jpg" alt=""></div>
+        </div>
+        <script>
+            var oImage1 = document.getElementById("t1");
+            var oImage2 = document.getElementById("t2");
+            var oImage3 = document.getElementById("t3");
+            var oImage4 = document.getElementById("t4");
+            var oImage5 = document.getElementById("t5");
+            oImage1.onmouseover = function () {
+                console.log(this.getAttribute("src"));
+                oImage5.setAttribute("src", this.getAttribute("src"))
+            }
+            oImage2.onmouseover = function () {
+                console.log(this.getAttribute("src"));
+                oImage5.setAttribute("src", this.getAttribute("src"))
+            }
+            oImage3.onmouseover = function () {
+                console.log(this.getAttribute("src"));
+                oImage5.setAttribute("src", this.getAttribute("src"))
+            }
+            oImage4.onmouseover = function () {
+                console.log(this.getAttribute("src"));
+                oImage5.setAttribute("src", this.getAttribute("src"))
+            }
+            // var oImage =[]= document.getElementsByClassName("bottomer")[0].getElementsByTagName("div");
+            // for(var i =0;i<4;i++){
+            //     oImage[i].onmouseover=function(){
+            //     oImage5.setAttribute("src", this.getAttribute("src"));
+            //     }
+            // }
+        </script>
+    </div>
+</body>
+
+</html>

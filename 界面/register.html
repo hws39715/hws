@@ -1,0 +1,521 @@
+<%@page import="com.sun.xml.internal.txw2.Document"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="com.javaweb.book.dao.mysql" %>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./js/jquery-3.4.1.js"></script>
+    <title>Document</title>
+    <style>
+        th{
+            width: 90px;
+        }
+        td{
+            width: 90px;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        body {
+            background-image: url("./image/7.png");
+            background-size: cover;
+            /* background-position: center; */
+            background-repeat: no-repeat;
+        }
+
+        .toper {
+            width: 750px;
+            margin: auto;
+        }
+
+        .centain {
+            height: 800px;
+            width: 1100px;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .active {
+            display: none;
+        }
+
+        button {
+            width: 100px;
+            height: 30px;
+            margin: 10px;
+            opacity: 0.5;
+            border-radius: 10%;
+        }
+
+        .action {
+            margin-top: 100px;
+            margin-left: 100px;
+            width: 800px;
+            height: 600px;
+        }
+
+        .action3 {
+            margin-top: 100px;
+            margin-left: 190px;
+            width: 800px;
+            height: 600px;
+        }
+
+        .action4 {
+            margin-top: 100px;
+            margin-left: 190px;
+            width: 800px;
+            height: 600px;
+        }
+
+        input {
+            margin-bottom: 10px;
+            height: 30px;
+        }
+
+        form {
+            color: white;
+        }
+        h1{
+            color: white;
+        }
+        /* ----------------------------------------- */
+        /* .r-return {
+            display: none;
+        } */
+
+        .r-return .rr-top {
+            width: 1355px;
+            height: 50px;
+            border-radius: 0 30px 0 10px;
+            border: 1px solid rgba(193, 194, 201, 0.3);
+            display: none;
+            /* padding: 10px 0; */
+            /* background-color: rgba(18, 103, 214, 0.678); */
+        }
+
+        .r-return .rr-top input {
+            width: 180px;
+            height: 50px;
+            font-size: 24px;
+            /*font-weight: 2px;*/
+            border: 2px solid rgba(147, 150, 168, 0.3);
+            border-radius: 4px;
+            font-family: "LiSu";
+            background-color: rgba(193, 194, 201, 0.3);
+        }
+
+        .r-return .rr-bottom {
+            position: relative;
+            width: 900px;
+            height: 560px;
+            margin: 0 auto;
+            /* background-color: rgba(18, 103, 214, 0.678); */
+        }
+
+        .r-return .rr-bottom .rr-title {
+            width: 500px;
+            height: 60px;
+            font-size: 40px;
+            color: wheat;
+            font-family: "FZShuTi";
+            /* background-color: #fff; */
+            text-align: center;
+            line-height: 60px;
+            position: absolute;
+            top: 65px;
+            left: 200px;
+        }
+
+        .r-return .rr-bottom form {
+            position: absolute;
+            top: 200px;
+            left: 150px;
+        }
+
+        .r-return .rr-bottom .rr-input input {
+            margin-bottom: 45px;
+            width: 600px;
+            height: 50px;
+            padding: 0 15px;
+            border: 3px solid black;
+            font-size: 20px;
+            color: wheat;
+            font-family: "SimHei";
+            background-color: rgba(30, 100, 211, 0.3);
+        }
+
+        .r-return .rr-bottom .rr-btn input {
+            margin-top: 45px;
+            margin-left: 200px;
+            width: 200px;
+            height: 40px;
+            opacity: 0.5;
+            border-radius: 10%;
+            border: 3px solid black;
+            font-family: "SimHei";
+            font-size: 20px;
+        }
+        .r-return .rr-bottom .rr-btn:nth-child(4) {
+            position: absolute;
+            top: 165px;
+            left: 400px;
+        }
+        .r-return .rr-bottom .rr-btn:nth-child(3) {
+            position: absolute;
+            top: 165px;
+        }
+        /* ----------------------------------------- */
+        /* .r-borrow1 {
+            display: block;
+            font-family: "SimHei";
+            font-size: 20px;
+        }
+
+        .r-borrow2 {
+            display: none;
+        } */
+
+        .rb-bottom {
+            position: relative;
+            width: 900px;
+            height: 560px;
+            margin: 0 auto;
+            /* background-color: rgba(18, 103, 214, 0.678); */
+        }
+
+        .rb-bottom .rbb-title {
+            width: 500px;
+            height: 60px;
+            font-size: 40px;
+            font-family: "FZShuTi";
+            color: wheat;
+            /* background-color: #fff; */
+            text-align: center;
+            line-height: 60px;
+            position: absolute;
+            top: 65px;
+            left: 200px;
+        }
+
+        .rb-bottom form {
+            position: absolute;
+            top: 200px;
+            left: 150px;
+        }
+
+        .rb-bottom .rbb-input input {
+            margin-bottom: 45px;
+            width: 600px;
+            height: 50px;
+            padding: 0 15px;
+            border: 3px solid black;
+            font-size: 20px;
+            font-family: "SimHei";
+            color: wheat;
+            background-color: rgba(30, 100, 211, 0.3);
+        }
+
+        .rb-bottom .rbb-btn input {
+            margin-top: 45px;
+            margin-left: 200px;
+            width: 200px;
+            height: 40px;
+            opacity: 0.5;
+            border-radius: 10%;
+            border: 3px solid black;
+            font-family: "SimHei";
+            font-size: 20px;
+        }
+
+        .rb-bottom .rbb-btn:nth-child(4) {
+            position: absolute;
+            top: 165px;
+            left: 400px;
+        }
+
+        .rb-bottom .rbb-btn:nth-child(3) {
+            position: absolute;
+            top: 165px;
+        }
+        .select-input input{
+            margin-bottom: 45px;
+            width: 600px;
+            height: 50px;
+            padding: 0 15px;
+            border: 3px solid black;
+            font-size: 20px;
+            font-family: "SimHei";
+            color: wheat;
+            background-color: rgba(30, 100, 211, 0.3);
+        }
+        .show5Text input{
+            margin-bottom: 45px;
+            width: 600px;
+            height: 50px;
+            padding: 0 15px;
+            border: 3px solid black;
+            font-size: 20px;
+            font-family: "SimHei";
+            color: wheat;
+            background-color: rgba(30, 100, 211, 0.3);
+        }
+        .show5Btn input{
+            margin-top: 45px;
+            margin-left: 200px;
+            width: 200px;
+            height: 40px;
+            opacity: 0.5;
+            border-radius: 10%;
+            border: 3px solid black;
+            font-family: "SimHei";
+            font-size: 20px;
+        }
+        .show5 form{
+            margin-left: 140px;
+        }
+        .show5 .rbb-title{
+            width: 500px;
+            height: 60px;
+            font-size: 40px;
+            font-family: "FZShuTi";
+            color: wheat;
+            /* background-color: #fff; */
+            text-align: center;
+            line-height: 60px;
+            position: absolute;
+            top: -80px;
+            left: 280px;
+        }
+        #show6 form{
+            margin-left: 180px;
+        }
+        #show6 form th{
+            width: 180px;
+        }
+        .zhuxiao{
+        
+            right:10px;
+            top: 10px;
+            position:absolute
+        }
+        .zhuxiao a{
+            color: wheat;
+        }
+        /* ----------------------------------------- */
+
+        /* ----------------------------------------- */
+    </style>
+</head>
+
+<body>
+    <div class="zhuxiao"><a href="login.jsp">注销</a></div>
+<div class="toper">
+    <h1>读者，您好！</h1>
+    <hr>
+    <button id="book_b">图书借阅</button>
+    <button id="book_r">图书归还</button>
+    <button id="book_s">图书查询</button>
+    <button id="reader_s">显示个人信息</button>
+    <button id="reader_u">罚款缴纳</button>
+    <button id="borrow_show">显示借阅信息</button>
+</div>
+<div class="centain">
+<div class="centain">
+<div id="show1" class="active action">
+    <div class="r-borrow2" id="r-borrow2">
+        <div class="rb-bottom">
+            <div class="rbb-title">读 书 使 你 受 益 终 生</div>
+            <form action="/BookBor" METHOD="post">
+                <div class="rbb-input"><input type="text" placeholder="借阅图书ID" id="rb-input1"
+                                              name="bookId"></div>
+                <!-- <div class="rbb-input"><input type="text" placeholder="借书时间 (格式:2019-1-1)"
+                        id="rb-input2" name="rb-input2"></div> -->
+                <div class="rbb-btn"><input type="submit" id="rbb-btn1"></div>
+            </form>
+        </div>
+    </div>
+    <%--            <%--%>
+    <%--                request.getAttribute("");--%>
+    <%--            %>--%>
+</div>
+<div id="show2" class="active action">
+    <div class="r-return" id="r-return">
+        <div class="rr-top">
+            <input type="submit" value="图书归还">
+        </div>
+        <div class="rr-bottom">
+            <div class="rr-title">记 得 多 读 书 哦</div>
+            <form action="/BookRet" method="post">
+                <div class="rr-input"><input type="text" placeholder="归还图书ID" id="rr-input1"
+                                             name="bookId">
+                </div>
+                <!-- <div class="rr-input"><input type="text" placeholder="还书时间(格式:2019-1-1)" id="rr-input2"
+                        name="rr-input2"></div> -->
+                <div class="rr-btn"><input type="submit" id="rr-btn1"></div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="show3" class="active action3">
+    <div>
+        <div class="select-input"><input type="text" placeholder="查找内容相关信息" id="select-input"
+                                         name="rr-input1">
+        </div>
+        <%
+        mysql b_s=new mysql();
+        b_s.book();
+//        b_s.rs2.first();
+        out.println("<form action='' method='post'> <table border ='2' > ");
+        out.println("<thead><tr><th>书号</th> <th>书名</th> <th>书架号</th>  <th>价格</th> <th>作者</th> <th>图书简介</th> <th>入库时间</th><th>剩余书数</th><tr></thead>");
+        out.println("<tbody>");
+        while (b_s.rs2.next()){
+        out.println("<tr>");
+        //out.println("<td>" + b_b.rs.getString(1)+"</td>");
+        for (int i = 1; i <= 8; i++)
+        {
+        out.println("<td>" + b_s.rs2.getString(i)+"</td>");
+        }
+        out.println("<tr>");
+        }
+
+        out.print("</tbody></table></form>");
+        %>
+    </div></div>
+<div id="show4" class="active action4">
+    <%
+    String rId=(String)session.getAttribute("readerid");
+    mysql b_b=new mysql();
+    b_b.reader();
+    b_b.rs=b_b.stm.executeQuery("select * from reader where r_id= "+rId+" ");
+//    b_b.rs.first();
+    out.println("<form action='' method='post'> <table border ='1' > ");
+    out.println("<tr><th>读者号</th> <th>姓名</th> <th>密码</th>  <th>性别</th> <th>专业</th> <th>最大借书数</th> <th>违规记录</th><th>已借书数</th><th>信用度</th><tr>");
+    while (b_b.rs.next()) {
+    out.println("<tr>");
+    //out.println("<td>" + b_b.rs.getString(1)+"</td>");
+    for (int i = 1; i <= 9; i++)
+    {
+    out.println("<td>" + b_b.rs.getString(i)+"</td>");
+    }
+    out.println("<tr>");
+    }
+    out.print("</table></form>");
+
+    %>
+</div>
+<div id="show5" class="show5 active action">
+    <div class="rbb-title">不 能 存 在 违 规 记 录 哦</div>
+    <form action="/ReaderTicket" method="POST">
+        <div class="show5Text">
+            <input type="text"placeholder="请输入读者ID" name="ticketRid">
+            <input type="text"placeholder="逾期图书编号" name="ticketBid">
+        </div>
+        <div class="show5Btn">
+            <input type="submit" value="罚款缴纳">
+        </div>
+    </form>
+</div>
+<div id="show6" class="active action">
+    <%
+    String rId1=(String)session.getAttribute("readerid");
+    mysql b_sh=new mysql();
+    b_sh.borrowShow();
+    b_sh.rs=b_b.stm.executeQuery("select * from borrow where r_id= "+rId1+" ");
+//    b_sh.rs.first();
+    out.println("<form action='' method='post'> <table border ='1' > ");
+    out.println("<tr><th>读者号</th> <th>图书号</th> <th>借书时间</th>  <tr>");
+    while (b_sh.rs.next()){
+    out.println("<tr>");
+    for (int i = 1; i <= 3; i++)
+    {
+    out.println("<td>" + b_sh.rs.getString(i)+"</td>");
+    }
+    out.println("<tr>");
+    }
+    out.print("</table></form>");
+    %>
+</div>
+<script>
+    $("#select-input").keyup(function(){
+        var inputval=$(this).val();
+        $("#show3 tbody tr").css({display:"none"})
+        $("#show3 tr:contains("+inputval+")").css({display:"table-row"})
+    })
+    var bookB = document.getElementById("book_b");
+    var bookR = document.getElementById("book_r");
+    var bookS = document.getElementById("book_s");
+    var readerS = document.getElementById("reader_s");
+    var readerU = document.getElementById("reader_u");
+    var borrowShow = document.getElementById("borrow_show");
+    var show1 = document.getElementById("show1");
+    var show2 = document.getElementById("show2");
+    var show3 = document.getElementById("show3");
+    var show4 = document.getElementById("show4");
+    var show5 = document.getElementById("show5");
+    var show6 = document.getElementById("show6");
+    bookB.onclick = function () {
+        show1.classList.add("active");
+        show2.classList.add("active");
+        show3.classList.add("active");
+        show4.classList.add("active");
+        show5.classList.add("active");
+        show6.classList.add("active");
+        show1.classList.remove("active");
+    }
+    bookR.onclick = function () {
+        show1.classList.add("active");
+        show2.classList.add("active");
+        show3.classList.add("active");
+        show4.classList.add("active");
+        show5.classList.add("active");
+        show6.classList.add("active");
+        show2.classList.remove("active");
+    }
+    bookS.onclick = function () {
+        show1.classList.add("active");
+        show2.classList.add("active");
+        show3.classList.add("active");
+        show4.classList.add("active");
+        show5.classList.add("active");
+        show6.classList.add("active");
+        show3.classList.remove("active");
+    }
+    readerS.onclick = function () {
+        show1.classList.add("active");
+        show2.classList.add("active");
+        show3.classList.add("active");
+        show4.classList.add("active");
+        show5.classList.add("active");
+        show6.classList.add("active");
+        show4.classList.remove("active");
+    }
+    readerU.onclick = function () {
+        show1.classList.add("active");
+        show2.classList.add("active");
+        show3.classList.add("active");
+        show4.classList.add("active");
+        show5.classList.add("active");
+        show6.classList.add("active");
+        show5.classList.remove("active");
+    }
+    borrowShow.onclick = function () {
+        show1.classList.add("active");
+        show2.classList.add("active");
+        show3.classList.add("active");
+        show4.classList.add("active");
+        show5.classList.add("active");
+        show6.classList.add("active");
+        show6.classList.remove("active");
+    }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr=[];
+        for(var i=0;i<7;i++){
+            var arr1=prompt("请输入第"+(i+1)+"门课程成绩");
+            // document.write(arr1);
+            arr.push(parseInt(arr1));    
+        }
+        var sum =0;
+        for(var j=0;j<7;j++){
+            sum += arr[j];
+        }
+        document.write("成绩总和为："+sum+"<br>");
+        document.write("平均成绩为："+round(sum/7)+"<br>");
+        document.write("低于六十分的成绩有：")
+        for(var k=0;k<=7;k++){
+            if(arr[k]<60){
+                document.write(arr[k]+"&nbsp");
+            }
+        }
+    </script>
+</body>
+</html>

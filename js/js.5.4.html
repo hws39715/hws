@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sushu(){
+            var num=1;
+            for(var i=100;i<=999;i++){
+                for(var j=2;j<i;j++){
+                    if(i%j==0){
+                        num=0;
+                        break;  
+                    }
+                }
+                if(num==1){
+                    document.write(i+"&nbsp;");
+                }
+            }
+        }
+        sushu();
+    </script>
+</body>
+</html>

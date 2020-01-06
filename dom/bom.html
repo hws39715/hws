@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .centainer {
+            margin: 0 auto;
+            margin-top: 100px;
+            height: 500px;
+            width: 300px;
+            background: gray;
+            position: relative;
+        }
+
+        .timer {
+            height: 30px;
+            top: 30px;
+            left: 50%;
+            margin-left: -10px;
+            position: absolute;
+            float: left;
+        }
+
+        .btn {
+            float: left;
+            top: 60px;
+            left: 50%;
+            margin-left: -12px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="centainer">
+        <div class="timer" id="content">5</div>
+        <button class="btn" id="add-btn">开始</button>
+    </div>
+    <script>
+        // window.setTimeout(function () {
+
+        // }, 3000)
+        // var num = 10;
+        // var timer = window.setInterval(function () {
+
+        // })
+        // // var oBtn = document.getElementsByTagName("button")[0];
+        //     console.log(oBtn[0]);
+        var oBtn = document.getElementById("add-btn");
+        var oDiv = document.getElementsByClassName("timer")[0];
+        var isStop = true;
+        oBtn.onclick = function () {
+            isStop = !isStop;
+            if (isStop) {
+                    clearInterval(int);
+                    oBtn.innerText = "开始";
+            }
+            else {
+                    int = setInterval(function () {
+                    oDiv.innerText = --oDiv.innerText;
+                    if(oDiv.innerText==0){
+                        clearInterval(int);
+                        oBtn.innerText="重置";
+                        isStop=true;
+                    }
+                }, 1000)
+                oBtn.innerText = "暂停";
+            }
+        }
+    // var btn = document.getElementById("add-btnn");
+    // var spn = document.getElementById("content");
+    // var idx = 0;
+    // var run = false;
+    // var interval = setInterval(function () {
+    //     if (run) {
+    //         idx += 1;
+    //         spn.innerHTML = idx;
+    //     }
+    // }, 1000);
+    // function changeRun() {
+    //     if (btn.value == '开始') {
+    //         btn.value = '暂停';
+    //         run = true;
+    //     } else {
+    //         btn.value = '开始';
+    //         run = false;
+    //     }
+    // }
+    </script>
+</body>
+
+</html>

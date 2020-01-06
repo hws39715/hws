@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .box {
+            width: 304px;
+            margin: 0 auto;
+            border-top: 1px solid black;
+            margin-top: 50px;
+        }
+        .box .toper{
+            background-color: black;
+        }
+        .box .toper div {
+            width: 80px;
+            height: 40px;
+            float: left;
+            border-left: black;
+            line-height: 40px;
+            border-left: 1px solid black;
+            text-align: center;
+        }
+        /* .box .toper div:hover {
+            background: chartreuse;
+        } */
+        .toper1{
+            background-color: tomato;
+            color: white;
+            
+        }
+        #toper3 {
+            width: 140px;
+            border-right: 1px solid black;
+        }
+        .class-from div:first-child {
+            width: 302px;
+            height: 120px;
+            border: 1px solid black;
+            border-top: none;
+        }
+        .class-from div:nth-child(2) {
+            width: 302px;
+            height: 120px;
+            border: 1px solid black;
+            border-top: none;
+        }
+        .class-from div:nth-child(3) {
+            width: 302px;
+            height: 120px;
+            border: 1px solid black;
+            border-top: none;
+        }
+        .class-from .class1{
+            display: none;
+        }
+        .class-from .active {
+            display: block;
+        }
+        .toper .active {
+            background-color: red;
+            color: chartreuse;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="toper">
+            <div class="toper1">第一节课</div>
+            <div class="toper1">第二节课</div>
+            <div class="toper1" id="toper3">第三节课</div>
+        </div>
+        <!-- <div id="show-from"></div> -->
+        <div class="class-from">
+            <div class="class1" id=c-show1>
+                <ul>
+                    <li>第一节课</li>
+                    <li>第一节课</li>
+                    <li>第一节课</li>
+                </ul>
+            </div>
+            <div class="class1" id=c-show2>
+                <ul>
+                    <li>第2节课</li>
+                    <li>第2节课</li>
+                    <li>第2节课</li>
+                </ul>
+            </div>
+            <div class="class1" id=c-show3>
+                <ul>
+                    <li>第3节课</li>
+                    <li>第3节课</li>
+                    <li>第3节课</li>
+                </ul>
+            </div>
+        </div>
+        <script>
+            var show = document.getElementsByClassName("class-from")[0].getElementsByTagName("div");
+            var show1 = document.getElementsByClassName("toper")[0].getElementsByTagName("div");
+            for (var j = 0; j < 3; j++) {
+                show1[j].index=j;
+                show1[j].onmouseover = function () {
+                    for (var i = 0; i < 3; i++) {
+                        show1[i].classList.remove("active");
+                        show[i].classList.remove("active");
+                    }
+                    show1[this.index].classList.add("active");
+                    show[this.index].classList.add("active");
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>

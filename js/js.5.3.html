@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function hanshu() {
+            var num = 1;
+            for (var i = 100; i <= 999; i++) {
+                if (i % 3 == 0 && i % 5 == 0 && i % 7 == 0) {
+                    document.write(i + "&nbsp");
+                    if (num % 6 == 0) {
+                        document.write("<br>")
+                    }
+                    num++;
+                }
+            }
+        }
+        hanshu();
+    </script>
+</body>
+
+</html>

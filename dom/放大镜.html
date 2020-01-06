@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 400px;
+            background-image: url("./img/hs1.jpg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: relative;
+            float: left;
+        }
+
+        .mover {
+            width: 200px;
+            height: 200px;
+            background-color: gray;
+            position: absolute;
+            opacity: 0.5
+        }
+
+        .shower {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            float: left;
+            margin-left: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .shower img {
+            width: 800px;
+            height: 800px;
+            /* width: 100%;
+            height: 100%; */
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="mover">
+        </div>
+    </div>
+    <div class="shower">
+        <img src="./img/hs1.jpg" alt="">
+    </div>
+    <script>
+        var obox = document.getElementsByClassName("box")[0];
+        var omover = document.getElementsByClassName("mover")[0];
+        var oimg = document.getElementsByTagName("img")[0];
+        obox.onmousemove = function (e) {
+            var thisleft = e.clientX - obox.offsetLeft;
+            var thistop = e.clientY - obox.offsetTop;
+            if (thisleft > 300) {
+                thisleft = 300;
+            }
+            if (thisleft < 100) {
+                thisleft = 100; 
+            }
+            if (thistop > 300) {
+                thistop = 300; 
+            }
+            if (thistop < 100) {
+                thistop = 100
+            }
+                omover.style.left = thisleft - 100 + "px";
+                omover.style.top = thistop - 100 + "px";
+                // console.log(omover.style.top)
+                oimg.style.left = -2 * (thisleft - 100) + "px";
+                oimg.style.top = -2 * (thistop - 100) + "px";
+        }
+    </script>
+</body>
+
+</html>

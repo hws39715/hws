@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+    <style>
+        td{
+            height: 5px;
+            width: 20px;
+            overflow: hidden;
+        }
+        th{
+            width: 20px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <table border="1" cellspacing="0" cellpadding="0" id="table">
+        <thead> <tr>				<th>学号</th>				<th>姓名</th>				<th>性别</th>				<th>年龄</th>			</tr>	</thead>			
+       	<tbody>
+            <tr>				<td>2014213840</td>				<td>张三</td>				<td>男</td>				<td>20</td>			</tr>			
+            <tr>				<td>2014213841</td>				<td>李四</td>				<td>男</td>				<td>20</td>			</tr>			
+            <tr>				<td>2014213842</td>				<td>王三</td>				<td>女</td>				<td>30</td>			</tr>	
+           </tbody>
+       	
+    </table>		
+    <input type="text" name="" id="input" value="" placeholder="请输入查询关键字"/>
+  
+     <script>
+        //  var text = "";		
+        // 	setInterval(function(){			
+        //         text = $('#input').val();
+        // 			if($.trim(text) != ""){					
+        //                 $("#table tr:not('#theader')").hide().filter(":contains('"+text+"')").show();			
+        //             }else{				
+        //                 $('#table tr').show();
+        //             		}		},100);
+        // $("#input").keyup(function(){
+        //     var inputval=$(this).val();
+        //     $("tbody tr").css({display:"none"})
+        //     $("tr:contains("+inputval+")").css({display:"table-row"})
+        // })
+        // $("#select-input").keyup(function(){
+        //     var inputval=$(this).val();
+        //     $("#show3 tbody tr").css({display:"none"})
+        //     $("#show3 tr:contains("+inputval+")").css({display:"table-row"})
+        // })
+        $("#input").keyup(function(){
+            var inputText = $().val();
+            $("tbody tr").css({display:"none"})
+            $("tr:contains("+inputText+")").css({display:"table-row"})
+        })
+     </script>
+
+</body>
+</html>

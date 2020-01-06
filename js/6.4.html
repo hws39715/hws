@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function COllectDigits(s){
+            var num =[];
+            for(var i=0;i<s.length;i++){
+                if(s[i]>=0&&s[i]<=9){
+                    num.push(s[i]);
+                }
+            }       
+            // for(var j=0;j<num.length;j++){
+                document.write(num.join(""));
+            // }
+        }
+        var s="as25s6f8dfg9"
+        COllectDigits(s);
+    </script>
+</body>
+</html>

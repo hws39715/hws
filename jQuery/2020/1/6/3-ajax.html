@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-3.4.1.js"></script>
+    <style>
+        .box {
+            width: 200px;
+            height: 30px;
+            border: 1px solid black;
+            position: relative;
+        }
+
+        input {
+            width: 150px;
+            height: 26px;
+            line-height: 26px;
+            padding: 0 10px;
+            font-size: 16px;
+            border: none;
+            background: none;
+            outline: none;
+        }
+
+        p {
+            top: -12px;
+            right: 8px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"><input type="text">
+        <p>无</p>
+    </div>
+    <script>
+        $(".box input").keyup(function () {
+            // console.log($(this).val());
+            // var xmlhttp;
+            // var $this = $(this).val()
+            // if (window.XMLHttpRequest) {
+            //     //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+            //     xmlhttp = new XMLHttpRequest();
+            // }
+            // else {
+            //     // IE6, IE5 浏览器执行代码
+            //     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            // }
+            // //第二部向服务器发送请求
+            // xmlhttp.open("GET", "https://api.myjson.com/bins/wk66k", true);
+            // xmlhttp.send();
+            // //第三步响应返回结果
+            // xmlhttp.onreadystatechange = function () {
+            //     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            //         var res = JSON.parse(xmlhttp.responseText)
+            //         for (i = 0; i < res.name.length; i++) {
+            //             if ($this == res.name[i]) {
+            //                 $("p").text("正确");
+            //                 break;
+            //             }
+            //             else{
+            //                 $("p").text("无")
+            //             }
+            //         }
+            //         // console.log(res.name)
+            //     }
+            // }
+            var $this = $(this).val();
+            $.get("https://api.myjson.com/bins/wk66k", function (res) {
+                for (i = 0; i < res.name.length; i++) {
+                    if ($this == res.name[i]) {
+                        $("p").text("正确");
+                        break;
+                    }
+                    else {
+                        $("p").text("无")
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,56 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        *{
-            margin:0;
-            padding:0;
+        * {
+            margin: 0;
+            padding: 0;
         }
-        body{
-            background-color:#f9f9f9;
+
+        body {
+            background-color: #f9f9f9;
         }
-        .container{
+        a{
+            text-decoration: none;
+        }
+        .container {
             height: 518px;
             width: 786px;
-            padding:0 34px 30px;
-            margin:40px auto 200px;
-            background-color:white;
+            padding: 0 34px 30px;
+            margin: 40px auto 40px;
+            background-color: white;
         }
-        .from-top{
+
+        .from-top {
             padding-bottom: 40px;
         }
-        .from-top a{
+
+        .from-top a {
             display: block;
             width: 49px;
             height: 48px;
-            margin:0 auto;
-            background-image:url(./milogo.png) ;
-            cursor:default;
+            margin: 0 auto;
+            background-image: url(./milogo.png);
+            cursor: default;
             /* padding-bottom: 40px;
             background-repeat: no-repeat; */
         }
-        .container h4{
+
+        .container h4 {
             font-size: 30px;
-            text-align:center;
+            text-align: center;
             font-weight: normal;
+        }
+
+        .from {
+            width: 332px;
+            padding: 30px 0;
+            margin: 0 auto;
+            line-height: 20px;
+        }
+
+        span {
+            color: #333;
+            padding: 0 0 5px;
+            font-size: 14px;
+        }
+
+        .from .from-text1 {
+            width: 316px;
+            height: 40px;
+            padding-left: 14px;
+            border: 1px solid #e8e8e8;
+            line-height: 40px;
+            margin-top: 5px;
+        }
+
+        .text1 {
+            border-right: 1px solid #e8e8e8;
+            width: 275px;
+            float: left;
+        }
+
+        .from-text1 i {
+            display: block;
+            width: 16px;
+            height: 16px;
+            background-image: url(./icon_user.png);
+            float: left;
+            margin: 11px 12px 0;
+        }
+
+        .span1 {
+            display: inline-block;
+            margin: -10px 0 0;
+            columns: #666666;
+            padding-bottom: 15px;
+        }
+
+        .from p {
+            color: #333;
+            font-weight: normal;
+            font-size: 14px;
+        }
+
+        .from .from-text2 {
+            width: 332px;
+            height: 40px;
+            border: 1px solid #e8e8e8;
+            line-height: 40px;
+        }
+
+        .from-text2 .left {
+            padding: 0 9px;
+            width: 54px;
+            border-right: 1px solid #e8e8e8;
+            float: left;
+        }
+
+        .left p {
+            float: left;
+        }
+
+        .left i {
+            border-width: 5px;
+            border-style: solid;
+            border-color: #9d9d9d transparent transparent transparent;
+            float: left;
+            margin: 17px 0 0 10px;
+        }
+
+        .from .from-text2 .right {
+            float: left;
+            padding: 0 10px;
+            color: #666;
+        }
+
+        .right input {
+            border: 0;
+            outline: 0;
+            height: 20px;
+            line-height: 20px;
+        }
+
+        .button input {
+            width: 330px;
+            height: 42px;
+            background-color: #ff6700;
+            margin-top: 15px;
+            border: 1px solid rgba(186, 186, 186, 0.3);
+            border: 0 none;
+            color: #fff;
+        }
+        .button{
+            margin-top:20px;
+        }
+        .buttomeer{
+            height:40px;
+            line-height:40px;
+            text-align:center;
+        }
+        h3{
+            text-align:center;
+            margin-top:50px;
+            font-weight: normal;
+        }
+         .h41{
+            font-size:14px;
+            color:#9d9d9d;
+        }
+        .h41 a{
+            color:#333;
+            font-weight: bold;
+        }
+        .bottomeer-top{
+            text-align: center;
+        }
+        .bottomeer .bottomeer-top li{
+            display:inline-block;
+        }
+        .bottomeer{
+            margin:0 auto 30px;
+        }
+        .bottomeer-top li{
+            font-size: 14px;
+            color:#9d9d9d;
+        }
+        .bottomeer-top li:hover{
+            color:#333;
+        }
+        .bottomeer-top li a{
+            margin:0 10px;
+            color:#9d9d9d;
+        }
+        .bottomeer-bottom{
+            text-align: center;
+            margin-top:10px;
+            color:#9d9d9d;
+        }
+        .bottomeer-bottom span{
+            color:#9d9d9d;
+        }
+        .bottomeer-bottom a{
+            color:#9d9d9d;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="from-top">
             <a href="javascript:void(0)"></a>
         </div>
-        <h4>注册小米账号</h4>
-        <div></div>
-        <h4></h4>
+        <h4>注册小米帐号</h4>
+        <div class="from">
+            <span>国家/地区</span>
+            <div class="from-text1">
+                <div class="text1"><span>中国</span></div>
+                <i></i>
+            </div>
+            <span class="span1">成功注册帐号后，国家/地区将不能被修改</span>
+            <p>手机号码</p>
+            <div class="from-text2">
+                <div class="left">
+                    <p>+86</p>
+                    <i></i>
+                </div>
+                <div class="right"><input type="text" placeholder="请输入手机号码"></div>
+            </div>
+            <div class="button">
+                <input type="button" value="立即注册">
+            </div>
+        </div>
+        <h3 class="h41">我已阅读并同意：小米<a href="javascript:void(0)">用户协议</a>和<a href="javascript:void(0)">隐私政策</a></h3>
     </div>
     <div class="bottomeer">
-
+        <ul class="bottomeer-top">
+            <li>简体<a href="javascript:void(0)">|</a></li>
+            <li>繁体<a href="javascript:void(0)">|</a></li>
+            <li>English<a href="javascript:void(0)">|</a></li>
+            <li>常见问题</li>
+        </ul>
+        <div class="bottomeer-bottom"><span>小米公司版权所有-京ICP备10046444-<a class="beianlink beian-record-link" target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802020134"><span><img src="https://account.xiaomi.com/static/res/9204d06/account-static/respassport/acc-2014/img/ghs.png"></span>京公网安备11010802020134号</a>-京ICP证110507号</span></div>
+        
     </div>
 </body>
 </html>

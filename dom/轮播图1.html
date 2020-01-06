@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        body{
+            background-image: url("./image/bg2.jpg");
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .box h1{
+            text-align: center;
+            color:white;
+            margin-bottom:20px;
+        }
+        .box{
+            margin:0 auto;
+            margin-top:300px;
+            width: 500px;
+            height: 500px;
+            position: relative;
+        }
+        h3{
+            color:white;
+            display: inline;
+        }
+        form{
+            margin-left: 133px;
+        }
+        input{
+        	margin-bottom: 10px;
+            height: 30px;
+            opacity: 0.7;
+        }
+        .btn{
+            position:absolute;
+            bottom: 200px;
+            left:200px;
+            opacity: 0.7;
+            border-radius: 10%;
+        }
+        #btn{
+            position:absolute;
+            bottom: 210px;
+            width:50px;
+            
+        }
+        button{
+            position: absolute;
+            height:30px;
+            bottom: 322px;
+            right:194px;
+            opacity: 0.7;
+            border-radius: 10%;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>读者注册</h1>
+        <form action="register.jsp" name="form2" method="POST">
+            <table >
+                <tr>
+                    <td><h3>用户账号:</h3><input type="text"id="r_id"name="r_id" placeholder="请输入账号"></td>
+                </tr>
+                <tr>
+                    <td><h3>用户姓名:</h3><input type="text" id="name" name="name"placeholder="请输入姓名"></td>
+                </tr>
+                 <tr>
+                    <td><h3>所在专业:</h3><input type="text" id="major" name="major"placeholder="请输入专业"></td>
+                </tr>
+                <tr>
+                    <td><h3>用户密码:</h3><input type="passwrod" id="r_password1"name="r_password1" placeholder="请输入密码"></td>
+                </tr>
+                <tr>
+                    <td><h3>确认密码:</h3><input type="passwrod" id="r_password2"name="r_password2" placeholder="请再次输入"></td>
+                </tr>
+                <tr>
+                <td style="margin-left:20px"><h3>女</h3><input type="radio" name="sex" value="女"><h3>男</h3><input type="radio" name="sex"value="男"></td>
+                </tr>
+                <tr><td ><input type="submit" class="btn"style="width: 50px;"value="注册" onclick="return check()"></td></tr>
+            </table>
+        </form>
+        <button id="btn" >登录</button>
+    </div>
+    <script>
+        var btn_login = document.getElementById("btn");
+        btn_login.onclick=function(){
+            location.href="login.jsp"
+        }
+        function check() {
+            var form2_id = document.getElementById("r_id");
+            var form2_pass1 = document.getElementById("r_password1");
+            var form2_pass2 = document.getElementById("r_password2");
+            if (form2_id.value == "") {
+                alert("账号不能为空");
+                return false;
+            }
+            if (form2_pass1.value == "") {
+                alert("密码不能为空");
+                return false;
+            }
+            if (form2_pass2.value == "") {
+                alert("密码不能为空");
+                return false;
+            }
+            if (form2_pass1.value != form_pass2.value) {
+                alert("两次输入密码不同");
+                return false;
+            }
+            else{
+                // window.location.href = "http://www.baidu.com";
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>
