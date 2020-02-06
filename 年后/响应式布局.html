@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .center{
+            max-width: 960px;
+            margin:0 auto;
+            min-width: 300px;
+        }
+        header,nav,footer{
+            width: 100%;
+            height: 100px;
+            background-color: #999;
+            text-align: center;
+            line-height: 100px;
+            font-size: 30px;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+        .image img{
+            width: 100%;
+        }
+        article{
+            width: 60%;
+            height: 300px;
+            background-color: red;
+            float: left;
+            margin-right: 5%;
+            position: relative;
+        }
+        aside{
+            width: 30%;
+            height: 300px;
+            background-color: blue;
+            float: right;
+            position: relative;
+        }
+        .clearfix::after{
+            content:"";
+            display: block;
+            clear: both;
+        }
+        p{
+            position: absolute;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <header>页头</header>
+        <nav>导航</nav>
+        <div class="container clearfix">
+            <div class="image">
+                <img src="./img/bc.jpg" alt="">
+            </div>
+            <article>
+                <p>
+                    2月1日0时至24时，山西省报告新型冠状病毒感染的肺炎新增确诊病例9例。其中：太原市2例（迎泽区1例、万柏林区1例），大同市2例（云冈区1例、天镇县1例），晋中市2例（平遥县2例），忻州市2例（五台县2例），晋城市1例（泽州县1例）。新增重症病例1例（忻州市忻府区1例），新增疑似病例26例。
+                </p>
+            </article>
+            <aside>
+                <p>
+                    治愈出院病例1例（太原市小店区），现有疑似病例64例。
+                </p>
+            </aside>
+        </div>
+        <footer>页脚</footer>
+    </div>
+
+</body>
+
+</html>
