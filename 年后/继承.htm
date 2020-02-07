@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //原型继承
+        function Person(name,age){
+            this.name = "我叫"+name;
+            this.age = "我的年龄是"+age;
+        }
+        Person.prototype.speak = function(){
+            console.log("hello");
+        }
+        
+        function Teacher(name,age){
+            Person.call(this,name,age);
+        }
+        Teacher.prototype = new Person();
+        Teacher.prototype.constructor = Teacher;
+        let person1 = new Person("小a","20");
+        person1.speak();
+        console.log(person1.age,person1.name);
+        let teacher1 = new Teacher("小张",30);
+        console.log(teacher1.name,teacher1.age);
+        //组合继承
+        Teacher.prototype = new Person();
+    </script>
+</body>
+</html>

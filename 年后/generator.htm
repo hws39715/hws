@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <script>
+        // function* foo(){
+        //     yield console.log("1");
+        //     yield console.log("2");
+        // }
+        // let foo2 = foo();
+        // foo2.next();
+        
+        function getData(url){
+            $.get(url,function(res){
+                a.next(res);
+            })
+        }
+        function* foo(){
+            console.log(yield getData("./data/a.json"));
+            console.log(yield getData("./data/b.json"));
+            console.log(yield getData("./data/c.json"));
+        }
+        let a = foo();
+        a.next();
+    </script>
+</body>
+</html>
