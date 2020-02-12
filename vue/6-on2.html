@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+    <style>
+        #div1{
+            width: 400px;
+            height: 400px;
+            background-color: red;
+        }
+        #div2{
+            width: 200px;height: 200px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div dir="app">
+        <div id="div1" @click="div1Click">
+            <div id="div2" @click="div2Click"> </div>
+        </div>
+        <a href="https://www.baidu.com">百度</a>
+        <input type="text" id="input1" @click="input1click">
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+
+            },
+            methods:{
+                div1Click(){
+                    console.log("div1");
+                    
+                },
+                div2Click(){
+                    console.log("div2");
+                    
+                },
+                aHandle(){
+                    
+                }
+            }
+        })
+    </script>
+</body>
+</html>
