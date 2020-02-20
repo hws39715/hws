@@ -8,21 +8,29 @@
 </head>
 <body>
     <div id="app">
-        <input type="text" c-on:click.keyup.enter="input1">
+        <com1 v-bind:username="name1"></com1>
     </div>
     <script>
         new Vue({
             el:"#app",
             data:{
-
+                name1:"小刚"
             },
             methods:{
-                input1(){
-                    console.log()
+                
+            },
+            components:{
+                com1:{
+                    props:['username'],
+                    template:`
+                    <div>
+                        <h1>组件{{username}}</h1>
+                        <button @click=""></button>
+                    </div>
+                    `
                 }
             }
         })
-
     </script>
 </body>
 </html>
