@@ -23,12 +23,12 @@
                     num: 0
                 }
             }
-            addHandle(){
+            addHandle() {
                 // console.log(this.state.num++);
                 this.setState({
-                    num:++this.state.num
+                    num: ++this.state.num
                 })
-                
+
             }
             render() {
                 return (
@@ -37,6 +37,8 @@
                         <h1>{this.state.num}</h1>
                         <button onClick={this.addHandle.bind(this)}>add</button>
                     </div>
+                    
+                    
                 )
             }
         }
