@@ -1,1 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(val,index) in arr">{{val}} --{{index}}</li>
+        </ul>
+        <ul>
+            <li v-for="(val,key,index) in obj">{{val}} --{{key}} --- {{index}}</li>
+        </ul>
+        <ul>
+            <li v-for="item in goodList">
+                姓名：{{item.name}} ---- 年龄：{{item.age}} ---- 学校：{{item.school}}
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            arr: [1, 2, 3, 4, 5],
+            obj: {
+                name: "a",
+                age: 13,
+                school: "hd"
+            },
+            goodList: [
+                {
+                    name: "a",
+                    age: 13,
+                    school: "hd"
+                },
+                {
+                    name: "a",
+                    age: 13,
+                    school: "hd"
+                },
+                {
+                    name: "a",
+                    age: 13,
+                    school: "hd"
+                },
+                {
+                    name: "a",
+                    age: 13,
+                    school: "hd"
+                },
+                {
+                    name: "a",
+                    age: 13,
+                    school: "hd"
+                },
+            ]
+        }
+    })
+</script>
+
+</html>

@@ -9,6 +9,7 @@
 <body>
     <div id="app">
         <button @click="clickHandle">add</button>
+        <p>{{ num }}</p>
     </div>
     <script>
         new Vue({
@@ -19,7 +20,7 @@
             methods:{
               clickHandle(){
                   console.log(this.num++);
-                  
+                  this.num++;
               }  
             }
         })

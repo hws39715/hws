@@ -43,7 +43,7 @@
 						{ required: true, message: '请输入密码', trigger: 'blur' }
 					],
 				},
-				showLogin: false,
+				showLogin: true,
 			}
 		},
 		mounted(){

@@ -19,12 +19,12 @@
 </head>
 
 <body>
-    <div dir="app">
-        <div id="div1" @click="div1Click">
-            <div id="div2" @click="div2Click"> </div>
+    <div id="app">
+        <div id="div1" @click="div1Click($event)">
+            <div id="div2" @click.stop="div2Click($event)"> </div>
         </div>
-        <a href="https://www.baidu.com">百度</a>
-        <input type="text" id="input1" @click="input1click">
+        <a @click.prevent="aHandle($event)" href="https://www.baidu.com">百度</a>
+        <input type="text" id="input1" v-on:keyup.13="input1click($event)">
     </div>
     <script>
         new Vue({
@@ -33,17 +33,24 @@
 
             },
             methods:{
-                div1Click(){
+                div1Click(e){
                     console.log("div1");
-                    
+                    console.log(e);
                 },
-                div2Click(){
+                div2Click(e){
                     console.log("div2");
+                    // e.stopPropagation(); //原生方法阻止冒泡
+
+                },
+                aHandle(e){
+                  console.log("baidu");
+                //   e.preventDefault();  原生阻止默认行为
                     
                 },
-                aHandle(){
+                input1click(e){
+                    console.log(e.target.value);
                     
-                }
+                },
             }
         })
     </script>

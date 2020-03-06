@@ -7,12 +7,15 @@
     <script src="./js/vue.js"></script>
 </head>
 <body>
-    <div id="app">{{str}}</div>
+    <div id="app"><span v-text="str"></span>
+        <div v-html="html"></div>
+    </div>
     <script>
         let app = new Vue({
             el:"#app",
             data:{
-                str:"hello world"
+                str:"hello world",
+                html:`<h1>hello</h1>`
             }
         })
 
