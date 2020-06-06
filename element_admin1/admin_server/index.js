@@ -9,7 +9,7 @@ const app = new Koa();
 
 //初始化路由
 const router = new Router({
-  prefix: "/fellow"
+  // prefix: ""
 });
 
 //小程序初始化

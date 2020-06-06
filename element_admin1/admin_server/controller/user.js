@@ -5,6 +5,8 @@ let router = new Router();
 router.post("/login", async (ctx, next) => {
 
   console.log(ctx.request.body)
+  console.log(ctx);
+  
       ctx.body = {
           code: 20000,
           data: {

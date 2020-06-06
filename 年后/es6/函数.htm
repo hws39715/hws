@@ -13,13 +13,13 @@
 
 <body>
     <script>
-        var Foo = function(a = 1,b = 2){
-            this.a = a;
-            this.b = b;
-        }
-        var foo = new Foo();
-        console.log(foo.a);
-        ; 
+        // var Foo = function(a = 1,b = 2){
+        //     this.a = a;
+        //     this.b = b;
+        // }
+        // var foo = new Foo();
+        // console.log(foo.a);
+        // ; 
         // function Point(x = 0, y = 0) {
         //     this.x = x;
         //     this.y = y;
@@ -27,8 +27,14 @@
 
         // const p = new Point();
         // console.log(p.x);
-        
+
         // { x: 0, y: 0 }
+
+
+        const numbers = (...nums) => nums;
+
+        console.log(numbers(1, 2, 3, 4, 5));
+        
     </script>
 </body>
 

@@ -11,7 +11,11 @@ http.createServer(function (req, res) {
         var indexData = fs.readFileSync(pathname, "utf-8");
         res.writeHead(200, { "Content-type": "text/html" }) //写包头
         res.end(indexData);
-    }else{
+    } else if (pathname == "/img"){
+        var pathname = __dirname + '/' + url.parse("123.jpg").pathname;
+        var imgData = fs.readFileSync(pathname);
+        res.writeHead();
+    } else {
         res.writeHead(404,{"Content-type":"text/plain"});
         res.end("the page is not founded");
     }
